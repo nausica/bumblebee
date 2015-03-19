@@ -1,0 +1,231 @@
+$Id: TODO,v 1.75 2006/02/06 17:12:25 stuart Exp $
+
+* 1.0 series
+------------
+Bugs:  
+  book dropdown on 10:00-16:00/6 includes times that would overlap bookings
+
+* 1.2 series
+------------
+Code documentation:
+  real phpdoc format and publish 
+Features:
+  * heirarchical+fine-grained permission system 
+  * longer bookings
+  * IE5Mac compatability?
+  * groups of instruments
+  * internationalisation
+  * bring email templates into the database
+
+* Later
+------------
+  * in-place booking (js mouse commands, DOM+js/ajax?)
+  
+
+  
+  
+  
+
+* a much more sophisticated permissions system that gives fine grained
+ control over what users can do
+ 
+* being able to set permissions on groups of instruments and groups of
+ users 
+ 
+* more reporting functions: future bookings by a user or group
+
+* group of instruments:
+  - calendar displays.
+  - permissions
+  - billing reports
+
+* book instruments for weeks/months.
+
+* instruments
+  - does not apply timeslot rule on create?  
+  
+* confirmation
+  - require confirmation for some instruments?
+
+
+ * full, user-configurable billing support included
+ * can export invoices or statements of usage
+ * can email invoices or statements of usage to groups
+ * unbooking an instrument causes an email to be sent to admin for some timeslots
+ * unbooking an instrument causes an email to be sent to the unbook list for some timeslots
+
+* -ve consumable quantities (for returns)?
+
+* email users with notification of booking 
+* email users a reminder that bookings are coming up (cron job)
+
+* billing
+
+configure exporttypes from files?
+
+* data exports
+  - summary of bookings for each user
+  - summary of bookings for a set of instruments 
+
+* instruments
+  - can we put some better validation on the timeslotrule input? e.g. making sure every hour is accounted for?
+  
+* installer
+  - create bumblebee.ini file?
+  - can only run once? delete itself?
+  - actually do the sql stuff?
+
+* ini file
+  - move bumblebee.ini to a db table? 
+
+* USER TESTING
+  - Firefox
+  - IE6
+  - Konq
+  - IE5.5
+  - IE5
+  - Safari
+  - Netscape 7 OSX
+
+
+
+create a real db with no bogus booking data and no dodgy invalid users etc
+-> sf.net 
+
+
+document radius install and config
+
+* theme
+  - design new theme, bg etc (not NANO, PFPC, UoM)
+  - clean up CSS, images etc for theme
+  - icon location, also for export
+
+* clean up action functions.
+  - should groups, projects, users actions etc be invocations of the *same* obj?
+
+
+
+->layout switch? use as call back function?
+
+radiolist always returns ischanged on update()
+
+make sure large data structures are being passed by reference not value
+(speed up)
+
+reflect postdata in case of re-login
+ - when do sessions die?
+
+$string = strip_tags($string, '<a><b><i><u>')
+also do this in qw? $string = strip_tags($string, '')
+
+
+$_SERVER['PHP_SELF']
+
+check for noise in error logs
+
+
+permit deletion of instrument classes
+
+
+streamline creation of project with only one group
+streamline creation of project when creating a user
+(projects: create new as option and if set to create new then make one and send the projectid to "edit project")
+
+??  work out confirmation emails and when adminconfirm is necessary
+
+select all/deselect all javascript buttons where applicable
+
+
+
+* unbook emails
+
+delete references to groups, projects in billing info, userprojects etc
+-- should there be checks for this? cannot delete things if used elsewhere?
+
+
+
+Billing SQL notes:
+
+for billing analysis, write a smart parser that scans the template for keys to write the SQL. May need to do some clever parsing too.
+
+
+
+
+install?
+-----------
+<?
+$dbhost = "localhost";    
+$dbusername = "root";     
+$dbpass = "";    
+$dbname    = "dbname";     
+$connection = mysql_connect($dbhost, $dbusername, $dbpass);
+$SelectedDB = mysql_select_db($dbname);
+$filename = "createdb.sql";
+$fd = fopen ($filename, "r");
+$contents = fread ($fd, filesize ($filename));
+fclose ($fd);
+mysql_query ("$contents");
+?>
+
+
+
+
+
+
+flat file logging?
+
+<?php
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+    $uri = $_SERVER['REQUEST_URI'];
+    $user = $_SERVER['PHP_AUTH_USER'];
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $ref = $_SERVER['HTTP_REFERER'];
+    $dtime = date('r');
+    
+    if($ref == ""){
+        $ref = "None";
+    }
+    if($user == ""){
+        $user = "None";
+    }
+    
+    $entry_line = "$dtime - IP: $ip | Agent: $agent  | URL: $uri | Referrer: $ref | Username: $user n";
+    $fp = fopen("logs.txt", "a");
+    fputs($fp, $entry_line);
+    fclose($fp);
+?> 
+
+
+
+------------
+
+see also:
+  ors.sf.net
+
+
+
+
+
+
+LIMITATIONS
+===========
+records are not locked while edited (update is atomic, but last-submitted changes win)
+
+
+
+
+
+-----------
+
+HISTORY
+=======
+
+BB0970: 2005-06-17
+Released on instruments.c.u.e.a for testing
+
+BB0959: 2005-05-25
+Released on instruments.c.u.e.a for testing
+
+
+
+

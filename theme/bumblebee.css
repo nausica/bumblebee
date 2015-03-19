@@ -1,0 +1,541 @@
+/* $Id: bumblebee.css,v 1.34.2.1 2006/07/13 20:21:38 themill Exp $ */
+
+/* Styles used within the bumblebee program 
+ 
+  All styles defined in here are used somewhere... if the theme is structured to include multiple
+  stylesheets (this one first and then custom ones following that), then the minimum amount
+  of work is required to implement the theme.
+*/
+
+/* general elements first */
+a {
+  text-decoration: underline;
+}
+
+body {
+  font-family: "Bitstream Vera Sans", Verdana, Helvetica, Arial, sans-serif; 
+}
+
+#bumblebeecontent a:hover {
+  text-decoration: none;
+  background-color: #ffff99;
+  color: #1005A7;
+}
+
+#bumblebeecontent a:active 
+{ 
+  text-decoration: underline;
+  color: #DA4C71; 
+}
+
+pre {
+  font-family: "Bitstream Vera Sans Mono",Courier New, monospace;
+  border: 1px solid #aaaaff;
+  margin: 0.5em 3em 0.5em 3em;
+  padding: 0.5em;
+}
+
+a img {
+  border: none;
+}
+
+td {
+  vertical-align: top;
+}
+
+
+/* some named elements from the layout */
+#bumblebeecontent {
+  padding: 0px;
+  margin: 0px;
+}
+
+#bumblebeefooter p {
+  font-size: 70%;
+  color: #999999;
+  clear: both;
+}
+
+.bumblebeecopyright {
+  font-size: 100%;
+}
+
+#bumblebeefooter a, #bumblebeefooter a:link, 
+#bumblebeefooter a:hover, #bumblebeefooter a:visited, #bumblebeefooter a:active  {
+  color: #9999ff;
+  text-decoration: none;
+}
+  
+#menulist li, #menulist ul {
+}
+
+#menulist a, #menulist a:link, #menulist a:visited {
+  background-color: #ccccff;
+  text-decoration: none;
+  color: #111166;
+}
+
+#menulist a:hover, a.but:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+#menulist a:active, a.but:active {
+  background-color: #ccffcc;
+  text-decoration: none;
+}
+  
+.floatRight {
+  clear: both;
+  float: right;
+  margin: 0.2em;
+  margin-right: 0em;
+}
+
+.floatLeft {
+  clear: both;
+  float: left;
+  margin: 0.2em;
+  margin-left: 0em;
+}
+
+#menulist li, #menulist ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#menulist a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+#menulist a {
+  width: 100%;
+  padding: 0 0.2em 0 0.2em;
+  margin: 0.2em 0 0.2em 0em;
+  background-color: #ccccff;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #999999;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #000000;
+}
+
+#menulist a:hover, a.but:hover {
+  background-color: #ffffff;
+}
+
+#menulist a:active, a.but:active {
+  background-color: #ccffcc;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #000000;
+}
+
+li.menusection {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+/* form elements */
+input {
+  font-size: 100%;
+}
+
+select {
+  font-size: 100%;
+}
+
+.centrein {
+  width: 90%;
+  margin: 0em 5% 0em 5%;
+}
+
+.alignleft {
+  display: inline;
+  text-align: left;
+}
+
+.alignright {
+  display: inline;
+  text-align: right;
+}
+
+table.calendar, table.calendarzoom {
+  border: 1px solid black;
+/*   border-collapse: collapse; */
+  font-size: 70%;
+}
+
+table.calendar {
+  background: white;
+}
+
+.calendar tr, .calendar td {
+}
+
+.calday, .caldow {
+  width: 14%;
+  border-left:0;
+  border-right: 1px solid black;
+  border-top:0;
+  border-bottom: 1px solid black;
+}
+
+.caldayzoom {
+  width: 90%;
+}
+
+.calday, .caldow, .caldayzoom {
+/*   border: 1px solid black; */
+  vertical-align: top;
+}
+
+.timecol, .timecolzoom {
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid black;
+}
+
+.timemark {
+  border-left:0;
+  border-right: 1px solid black;
+  border-top:0;
+  border-bottom:0;
+}
+.timecol {
+  /*width: 9%;*/
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.timecolzoom {
+  width: 10%;
+}
+
+th.caldow {
+  background-color: #ccccff;
+}
+
+.caldatecell {
+  font-style: italic;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.moneven {
+  background-color: #ffecfc;
+}
+
+.monodd {
+  background-color: #eeffff;
+}
+
+.caltoday{
+  background-color: #ffeecc;
+}
+
+.startmonth {
+  display: inline;
+}
+
+.contmonth {
+  display: none;
+}
+
+.vacancy {
+  /*border: 1px solid green;*/
+  border-right: 1px solid green;
+  border-bottom: 1px solid green;
+  /*background-color: #ccffcc;*/
+}
+
+.disabled {
+  background-color: #ffffff;
+}
+
+.booktimezoom .vacancy {
+  background-color: #ddffdd;
+  margin: 0;
+}
+
+.booking {
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  background-color: #ffdddd;
+  /*white-space: normal;*/
+  /*height: 0.5em;*/
+}
+
+.booktimezoom .booking {
+  margin: 0;
+}
+
+.vacancy, .booking {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  /*white-space: nowrap;*/
+/*   overflow: hidden; */
+  /*height: 2em;*/
+  width: 13%;
+  /*height: 100%;*/
+}
+
+td.dummy {
+  width: 1px;
+  height: 0.5em;
+/*   height: 0.25em; */
+  background-color: #ffffff;
+  margin: 0 0em 0 0;
+  padding: 0 0 0 0em;
+  /*border-collapse: collapse;*/
+  visibility: hidden;
+  overflow: hidden;
+/*   font-size: 1px; */
+}
+
+a.but { 
+  background-color: #ccccff;
+  color: black;
+  text-decoration: none;
+  font-size: 70%;
+  background: transparent;
+}
+
+.calendarzoom .but, .calendar .but {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  background: transparent;
+}
+
+.calendarzoom .but:hover, .calendar .but:hover {
+  background: transparent;
+}
+
+.calicon {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  height: 1.8em;
+  width: 1.8em;
+  border: none;
+  background: transparent;
+}
+
+.calendarzoom .calicon {
+  height: auto;
+  width: auto;
+}
+
+.calbookperson {
+  white-space: nowrap;
+  color: blue;
+  overflow: hidden;
+}
+
+.calendarzoom .calbookperson {
+  white-space: normal;
+}
+
+.calcomment {
+  font-size: 80%;
+  white-space: normal;
+  overflow: hidden;
+  height: 2.4em;
+/*   width: 100%; */
+  line-height: 90%;
+}
+
+.calendarzoom .calcomment {
+  white-space: normal;
+  height: 100%;
+}
+
+
+/* if VERBOSESQL is turned on, then the SQL command are echoed to the screen in this style */
+.sql {
+  margin: 1em 5% 1em 5%;
+  padding: 0.5em;
+  border: 1px solid blue;
+  background-color: #ccccff;
+}
+
+/* error messages from trying to execute updates on objects (e.g. invalid data) */
+.error, .msgerror {
+  border: 1px solid red;
+  background-color: #ffcccc;
+  margin: 1em;
+  padding: 1em;
+}
+
+/* successful updates (sync()) can report their success  */
+.msgsuccess {
+  border: 1px solid green;
+  background-color: #ccffcc;
+  margin: 1em;
+  padding: 1em;
+}
+
+.sql, .error {
+  /*display: none;*/
+}
+
+.tabularobject {
+  border: 1px solid black;
+  margin: 0.5em 3em 0.5em 3em;
+/*  border-collapse: collapse;*/
+  border-spacing: 0px;
+}
+
+.tabularobject td {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.inputerror {
+  border: 1px solid red;
+  background-color: #ffcccc;
+}
+
+.inputerror td {
+  /*border: 1px solid red;*/
+  background-color: #ffcccc;
+  padding: 0.5em;
+}
+
+ul.selectlist {
+  list-style: none;
+}
+
+/* used in table selection lists */
+table.selectlist {
+  margin: 0 3em 0 3em;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td.itemL {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+td.itemR {
+  padding-right: 0.3em;
+}
+
+tr.itemrow {
+}
+
+tr.itemrow:hover {
+  text-decoration: none;
+  color: #000000;
+  background-color: #FFFF99;
+}
+
+td.itemL a {
+  display: block;
+}
+
+.selectlist a {
+  text-decoration: none;
+}
+
+.selectlist td {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.radioitem {
+}
+
+input.radioitem {
+}
+
+.highlight {
+  font-weight: bolder;
+  color: #cc6666;
+}
+
+.calendarcomment {
+   padding-top: 2em;
+}
+
+#masquerade {
+  border: 2px solid #cc6666;
+  padding: 0.2em 0.2em 0.2em 0.2em;
+  margin: 0.4em 0 0 0;
+  display: block;
+  width: 100%;
+  background-color: #ffeeee;
+}
+
+#masquerade a, #masquerade a:link, 
+#masquerade a:visited, #masquerade a:hover, #masquerade a:active {
+  border: 0;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  color: #3333ff;
+  text-decoration: underline;
+}
+
+#masquerade a:hover, #masquerade a:active {
+  background-color: #ff0000;
+  color: #000000;
+  text-decoration: none;
+}
+
+#bumblebeeExport {
+}
+
+
+#bumblebeeExport .exportdata {
+  width: 100%;
+/*   border: 1px solid black; */
+  margin: 1em;
+  border-collapse: collapse;
+  page-break-after: always;
+}
+
+#bumblebeeExport .exportdata tr {
+  border: 1px solid black;
+  border-top: none;
+}
+
+#bumblebeeExport .exportdata tr.header {
+  font-weight: bolder;
+}
+
+#bumblebeeExport .exportdata td {
+  padding-left: 0.5em;
+  margin-right: 0.2em;
+}
+
+#bumblebeeExport .exportHeader {
+  margin: 0;
+  font-weight: bold;
+  font-size: 120%;
+  border-bottom: 2px solid black;
+}
+
+#bumblebeeExport .exportSectionHeader {
+  margin-top: 2em;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+#bumblebeeExport td.exportSectionHeader, #bumblebeeExport tr.exportSectionHeader { 
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-top: 2em;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+#bumblebeeExport tr.totals {
+  padding-top: 0.5em;
+  border-top: 3px double black;
+}

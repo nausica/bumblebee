@@ -1,0 +1,280 @@
+2006-08-01 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.6 release
+	* feature: phone numbers can be included in the calendar too 
+	  (closes #1517835)
+	* feature: allow the comment field on the calendar page to be moved to the 
+	  top (closes #1517836)
+	* feature: provide additional config options for sending mail under win32 
+	  (closes #1532742)
+	* bugfix: fix off-by-one error in list of groups whose reports are attached 
+	  to the email (closes #1532744)
+
+2006-06-25  Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.5 release
+	* bugfix: turn off web browser form autocompletion by default (closes #1494893) 
+	* bugfix: try to provide more helpful error messages when mail() fails (closes #1504704)
+	* feature: include user-specified text on the login page (closes #1494989) 
+
+2006-05-13  Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.4 release
+	* bugfix: fix "Calendar" link after editing/deleting bookings (closes #1487332)
+	* bugfix: sanity check that the BasePath is a directory for session handling (closes: #1487330);
+		include same sanity checks in installer script
+	* bugfix: fix startticks error on editing bookings by initialising field properly (closes #1487399)
+
+2006-04-28  Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.3 release
+	* bugfix: allow timeslot discount and comment to work on the same slot 
+	* bugfix: change action calculation to not use PATH_INFO at all; 
+    now works under PHP CGI module (closes #1477103) 
+	* bugfix: assume that a null value for discount means 0. 
+	* bugfix: work around PHP session.auto_start; also allow for externally 
+    started sessions (from some CMS framework) and make sure the session 
+    cookie is only available to the Bumblebee installation (closes #1473112)
+	* bugfix: change the default mysqldump command line so that it doesn't 
+    require grant LOCK TABLES do backup the database under MySQL 4.1 and MySQL 5. 
+	* feature: new installer script with error checking on user values and 
+    compatability with MySQL5 (closes #1473020)
+	* feature: allow admin to reset password and turn on extra login debugging info just using the config file
+	* bugfix: user can now change password if email or phone number is not set
+
+2006-03-27 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.2 release
+	* bugfix: calendar display contained duplicate bookings when coming out of daylight saving time
+
+2006-02-06 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.1 release
+	* feature: Cc the logged-in user on billing emails
+	* bugfix: viewing consumable usage not updated to new deletion framework
+	* bugfix: masquerading class not available to non-sysadmin users
+	* bugfix win32: don't use %e in strftime
+	* feature: LDAP authentication enabled
+	* code docs: comments converted to phpdoc style
+
+2005-09-05 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 1.0.0 release
+
+2005-08-25 Stuart Prescott <bumblebee@nanonanonano.net>
+	* tagged as 0.9.9.4-1.0rc4 
+	* help system on sf.net activated
+	* allowed user-specified path to mysqldump + options 
+	* deletion of objects no longer deletes from database instead uses deleted flag 
+
+2005-08-12 Stuart Prescott <bumblebee@nanonanonano.net>
+	* Fix calendar display so that out-of-slot bookings made by admin don't break grid pattern 
+	* Fix booking validation so that non-admin users can make bookings that start or stop at non-slot times if those times but up against another out-of-slot booking 
+	* Change CSS to reduce problems of half-hour table cells being given zero-height and rounded back to previous hour 
+	* include location of instruments in the view instrument list 
+
+2005-07-06 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 0.9.9.2-1.0rc3
+	* bugfix: max days in future settings on calendar and day views now do as intended 
+	* feature: max days in future now enforced on calendars not just optional, admin override 
+	* bugfix: time handling now correct for times less than one hour (SimpleDate/Time -> TimeSlotRule) 
+	* bugfix: overnight bookings now appear at end of day and beginning of next day on calendar view (change order of booking normalisation to do TimeSlotsRule first then BreakByDay) 
+	* feature: make subscribe-announce on by default in the forms 
+
+2005-07-01 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 0.9.9.1-1.0rc2
+	* enabled a maximum number of days into the future that calendars are displayed for 
+
+2005-06-29 Stuart Prescott <bumblebee@nanonanonano.net>
+	* change email functions to use the From address of the server and a reply-to of the user that triggered the email to be sent. 
+
+2005-06-27 Stuart Prescott <bumblebee@nanonanonano.net>
+	* 0.9.9.0-1.0rc1
+
+2005-06-24 Stuart Prescott <bumblebee@nanonanonano.net>
+	* bugfix: instrument time slot rule didn't stick on instrument creation 
+
+2005-06-24 Stuart Prescott <bumblebee@nanonanonano.net>
+	* create instrument supervisors 
+	* include instrument supervisor (link to email) on the calendar page 
+	* send booking to supervisor when booking is made or changed 
+
+2005-06-23 Stuart Prescott <bumblebee@nanonanonano.net>
+	* fix (again) comments in booking slots 
+
+2005-06-20 Stuart Prescott <bumblebee@nanonanonano.net>
+	* billing data exporter for the actual invoicing for accts payable 
+
+2005-06-18 Stuart Prescott <bumblebee@nanonanonano.net>
+	* make PDF export more configurable from ini file 
+	* make billing report more informative and include intermediate results too 
+
+2005-06-17 Stuart Prescott <bumblebee@nanonanonano.net>
+	* create interface to allow userclass name to be edited by admin 
+
+2005-06-04 Stuart Prescott <bumblebee@nanonanonano.net>
+	* combined report format as PDF 
+	* email PDF reports to either logged in user or to supervisor 
+
+2005-05-31 Stuart Prescott <bumblebee@nanonanonano.net>
+	* added ability to edit instrument class name, add / delete classes 
+	* start of invoicing export functions 
+
+2005-05-30 Stuart Prescott <bumblebee@nanonanonano.net>
+	* PDF export improvements  
+	* inclusion of the SUM of a column in the export 
+	* allow the SQL to be a UNION between different queries  
+	* instrument use+consumable combined data export implemented 
+
+2005-05-28 Stuart Prescott <bumblebee@nanonanonano.net>
+	* working PDF export of tablular data with pretty-table, multiline-cells etc 
+	* customisation of PDF export not possible yet: fixed fonts, sizes, colours, header image 
+
+2005-05-26 Stuart Prescott <bumblebee@nanonanonano.net>
+	* clean-up of export interfaces, split into multiple classes etc 
+	* introduced intermediate array format for producing HTML to permit BigTable export and facilitate PDF generation 
+
+2005-05-25 Stuart Prescott <bumblebee@nanonanonano.net>
+	* extensions to export 
+	* code cleanups and bugfixes throughout 
+
+2005-05-24 Stuart Prescott <bumblebee@nanonanonano.net>
+	* included bulk-discount model into billing system SQL 
+
+2005-05-24 Stuart Prescott <bumblebee@nanonanonano.net>
+	* flexibility for footers on checkboxtables  improved, incl built-in js quicklinks 
+	* built special costs manipulation interface 
+	* added more of billing algorithm into SQL 
+
+2005-05-22 Stuart Prescott <bumblebee@nanonanonano.net>
+	* changed menu creation code to clean up index.php and permit shelling into templates more easily 
+
+2005-05-21 Stuart Prescott <bumblebee@nanonanonano.net>
+	* cleanups of export code, incl format options added to output 
+
+2005-05-20 Stuart Prescott <bumblebee@nanonanonano.net>
+	* initial cut at billing calculations in SQL 
+	* some bugfixes on export 
+
+2005-05-20 Stuart Prescott <bumblebee@nanonanonano.net>
+	* initial attempt for exporting data from database in various formats added 
+	 
+
+2005-05-19 Stuart Prescott <bumblebee@nanonanonano.net>
+	* fix up to magic_quotes_gpc handling (wouldn't it be nice if it could be turned off at runtime?) 
+
+2005-05-18 Stuart Prescott <bumblebee@nanonanonano.net>
+	* allow different hosts in install script 
+	* change system user passwd handling in install script to not use PASSWORD() 
+
+2005-05-17 Stuart Prescott <bumblebee@nanonanonano.net>
+	* create JoinMatrix class to handle data in one table that has coordinates (keys) from two tables 
+	* edit standard costs for instrument usage in matrix form 
+
+2005-05-16 Stuart Prescott <bumblebee@nanonanonano.net>
+	* relaxed constraint requiring alphabetic username 
+	* permitted an admin-configurable regexp to test usernames 
+	* bugfix in auth error message return 
+
+2005-05-16 Stuart Prescott <bumblebee@nanonanonano.net>
+	* unborked email list action 
+	* extended emai list form to allow a value separator to be specified 
+	* re-enabled email list in adminmenu 
+
+2005-05-15 Stuart Prescott <bumblebee@nanonanonano.net>
+	* joindata count num rows JIT update 
+
+2005-05-15 Stuart Prescott <bumblebee@nanonanonano.net>
+	* implemented an out-of-band data mechanism to permit feedback from complex fields into the reportAction mechanism 
+
+2005-05-13 Stuart Prescott <bumblebee@nanonanonano.net>
+	* CSS clean-ups, including splitting main CSS file for easier theming 
+
+2005-05-13 Stuart Prescott <bumblebee@nanonanonano.net>
+	* enabled masquerading as another user for admin user and instrument admins 
+
+2005-05-12 Stuart Prescott <bumblebee@nanonanonano.net>
+	* added a system(mysqldump) call to permit a backup of the entire database. 
+
+2005-05-12 Stuart Prescott <bumblebee@nanonanonano.net>
+	* first cut at installing script 
+
+2005-05-11 Stuart Prescott <bumblebee@nanonanonano.net>
+	* enabled comments from either booking or from timeslotrule to appear in calendar view 
+	* many CSS changes to make more sense of calendar view 
+	* some simple HTML changes to ensure every tr has a td within it (validator.w3.org) 
+
+2005-05-11 Stuart Prescott <bumblebee@nanonanonano.net>
+	* foreach cleanups 
+	* permit comments in timeslotrule pictures 
+
+2005-05-10 Stuart Prescott <bumblebee@nanonanonano.net>
+	* enabled date ranges for deleted bookings and consumable usage views.  
+	* included javascript +/- class to control a number of text fields 
+
+2005-05-09 Stuart Prescott <bumblebee@nanonanonano.net>
+	* add an optional two-step sync algorithm for dbrow objects to facilitate join-table objects 
+
+2005-05-09 Stuart Prescott <bumblebee@nanonanonano.net>
+	* admin can now view a list of deleted bookings for each instrument 
+
+2005-05-09 Stuart Prescott <bumblebee@nanonanonano.net>
+	* enabled admin to prevent users from changing the times of bookings or deleting bookings within a given time period of the booking (log/book paradigm) 
+
+2005-05-09 Stuart Prescott <bumblebee@nanonanonano.net>
+	* Bugfixes and clean-ups for $TABLEPREFIX 
+
+2005-05-07 Stuart Prescott <bumblebee@nanonanonano.net>
+	* first cut at implementing a TABLEPREFIX to permit shared database 
+
+2005-05-07 Stuart Prescott <bumblebee@nanonanonano.net>
+	* bugfix: fix timeslotrule/bookingentry validation with FreeTime slots 
+	 
+
+2005-05-07 Stuart Prescott <bumblebee@nanonanonano.net>
+	* include per-instrument comment field  
+	* handle timeslot 00:00 vs 24:00 end of booking problem 
+
+2005-05-07 Stuart Prescott <bumblebee@nanonanonano.net>
+	* source reorganisation to protect includes from execution by webserver (.htaccess)
+
+2005-05-06 Stuart Prescott <bumblebee@nanonanonano.net>
+	* revamped approach to creating timeslot rule data 
+
+2005-05-06 Stuart Prescott <bumblebee@nanonanonano.net>
+	* added rudimentary interface to per-instrument calendar view controls and timeslot rules 
+
+2005-05-05 Stuart Prescott <bumblebee@nanonanonano.net>
+	* dbchoicelist bugfixes 
+	* extra descriptons in forms 
+	* capable of building from within after initial structure creation with exception of slotrules. 
+
+2005-05-05 Stuart Prescott <bumblebee@nanonanonano.net>
+	* booking cleanups (incl. IE6 compatability changes) 
+	* user password + radius auth incl 
+
+2005-05-03 Stuart Prescott <bumblebee@nanonanonano.net>
+	* radius auth model updated; use config files to specify details 
+
+2005-05-02 Stuart Prescott <bumblebee@nanonanonano.net>
+	* enabled interface for editing the standard costs for instrument usage 
+
+2005-05-01 Stuart Prescott <bumblebee@nanonanonano.net>
+	* added unified logging functions to most objects 
+	* booking system now works. TODO: auth for edit & delete 
+
+2005-04-30 Stuart Prescott <bumblebee@nanonanonano.net>
+	Fixed calendar display for bookings crossing days 
+
+2005-04-27 Stuart Prescott <bumblebee@nanonanonano.net>
+	changed deletion of bookings to only mark as deleted rather than actually delete the entry 
+
+2005-04-25 Stuart Prescott <bumblebee@nanonanonano.net>
+	* numerous FIXMEs fixed 
+	* return hrefs from booking functions fixed 
+
+2005-03-18 Stuart Prescott <bumblebee@nanonanonano.net>
+	* Initial implentation of checking booking permissions for non-admin users 
+
+2005-03-16 Stuart Prescott <bumblebee@nanonanonano.net>
+	added duration of booking dropdown based on timeslot pattern  
+
+2005-03-06 Stuart Prescott <bumblebee@nanonanonano.net>
+	initial addition of booking slots into create booking interface code (TODO: add to booking validation code) 
+
+2005-03-03 Stuart Prescott <bumblebee@nanonanonano.net>
+	Added booking slot requirements to monthly and daily instrument display 
+

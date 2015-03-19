@@ -1,0 +1,231 @@
+/* $Id: bumblebee-custom-colours.css,v 1.16 2005/05/30 06:48:40 stuart Exp $ */
+
+
+/* Custom styles to define 
+ 
+  These styles override those in bumblebee.css. The intention is to use this file mainly
+  for defining customisation of the colours of the different elements rather than the 
+  spacing, placement etc of the elements.
+  
+*/
+
+
+#bumblebeecontent {
+}
+
+a {
+}
+
+a:hover {
+}
+
+a:active { 
+}
+
+#bumblebeefooter {
+  color: #999999;
+}
+
+.bumblebeecopyright {
+}
+
+#bumblebeefooter a, #bumblebeefooter a:link, 
+#bumblebeefooter a:hover, #bumblebeefooter a:visited, #bumblebeefooter a:active  {
+}
+  
+pre {
+}
+
+#fmenu {
+}
+
+#fmenu h3 {
+}
+
+#menulist li, #menulist ul {
+}
+
+#menulist a, #menulist a:link, #menulist a:visited {
+}
+
+#menulist a:hover, a.but:hover {
+}
+
+#menulist a:active, a.but:active {
+}
+
+table.calendar, table.calendarzoom {
+  border: 1px solid black;
+  font-size: 70%;
+}
+
+table.calendar {
+}
+
+.calday, .caldow {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.caldayzoom {
+}
+
+.timecol, .timecolzoom {
+  border: 1px solid black;
+}
+
+.timemark {
+  border-right: 1px solid black;
+}
+
+th.caldow {
+  background-color: #ccccff;
+}
+
+.caldatecell {
+  font-style: italic;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.moneven {
+  background-color: #ffecfc;
+}
+
+.monodd {
+  background-color: #eeffff;
+}
+
+.caltoday{
+  background-color: #ffeecc;
+}
+
+.vacancy {
+  border-right: 1px solid green;
+  border-bottom: 1px solid green;
+  /*background-color: #ccffcc;*/
+}
+
+.disabled {
+  background-color: #ffffff;
+}
+
+.booktimezoom .vacancy {
+  background-color: #ddffdd;
+}
+
+.booking {
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  background-color: #ffdddd;
+}
+
+
+.booktimezoom .booking {
+  margin: 0;
+}
+
+.calicon {
+  height: 1.8em;
+  width: 1.8em;
+  border: none;
+  background: transparent;
+}
+
+.calendarzoom .calicon {
+  height: auto;
+  width: auto;
+}
+
+.calbookperson {
+  color: blue;
+  overflow: hidden;
+}
+
+.calcomment {
+  font-size: 80%;
+  height: 2.4em;
+  line-height: 90%;
+}
+
+.sql {
+  background-color: #ccccff;
+}
+
+.error, .msgerror {
+  border: 1px solid red;
+  background-color: #ffcccc;
+}
+
+.msgsuccess {
+  border: 1px solid green;
+  background-color: #ccffcc;
+}
+
+.tabularobject {
+  border: 1px solid black;
+  margin: 0.5em 3em 0.5em 3em;
+/*  border-collapse: collapse;*/
+  border-spacing: 0px;
+}
+
+.inputerror {
+  border: 1px solid red;
+  background-color: #ffcccc;
+}
+
+.inputerror td {
+  /*border: 1px solid red;*/
+  background-color: #ffcccc;
+  padding: 0.5em;
+}
+
+/* used in table selection lists */
+table.selectlist {
+  border: 1px solid black;
+}
+
+tr.itemrow:hover {
+  color: #000000;
+  background-color: #FFFF99;
+}
+
+/* highlight a particular setting or comment (e.g. in masquerade) */
+.highlight {
+  font-weight: bolder;
+  color: #cc6666;
+}
+
+/* masquerade settings */
+#masquerade {
+  border: 2px solid #cc6666;
+  background-color: #ffeeee;
+}
+
+#bumblebeeExport {
+}
+
+#bumblebeeExport .exportdata {
+}
+
+#bumblebeeExport .exportdata tr {
+}
+
+#bumblebeeExport .exportdata tr.header, #bumblebeeExport th {
+  background-color: #113A70;
+  color: #ffffff;
+}
+
+#bumblebeeExport .exportdata td {
+}
+
+#bumblebeeExport .exportHeader {
+  border-bottom: 2px solid black;
+}
+
+#bumblebeeExport .exportSectionHeader {
+}
+
+#bumblebeeExport tr.totals {
+  background-color: #f0f0ff;
+}
